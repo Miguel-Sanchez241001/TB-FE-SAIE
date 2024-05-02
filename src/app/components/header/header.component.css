@@ -1,0 +1,26 @@
+.header-box{
+  background: #000000;
+  width: 100%;
+  height: 100px;
+  color:#ffffff;
+}
+.header-top{
+  display: grid;
+  grid-template-columns: 70% 30%;
+
+}
+.header-right
+{
+  background: #2F4E6F;
+  padding: 0px 10px;
+
+}
+.header-right span {
+  margin-right: 10px; /* Agrega margen a la derecha del span */
+  display: inline-block;
+  width: 55%;
+  border-right: 1px solid black;
+}
+.title {
+  font-size: 1.4em; /* Ajusta el tamaño del texto según sea necesario */
+}

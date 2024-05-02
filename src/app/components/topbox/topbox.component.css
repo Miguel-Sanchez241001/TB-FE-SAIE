@@ -1,0 +1,17 @@
+.topbox
+{
+  background: #C8D7E3;
+  width: 100%;
+  color: black;
+  display: inline-block;
+  padding: 4px 10px;
+}
+.topbox-config{
+  color : #2F4E6F;
+
+}
+
+.topbox-config h4, p{
+  padding: 4px 10px;
+
+}

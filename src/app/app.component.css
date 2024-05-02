@@ -1,0 +1,7 @@
+.body{
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+
+

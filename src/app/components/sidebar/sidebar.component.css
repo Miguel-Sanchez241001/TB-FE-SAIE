@@ -1,0 +1,16 @@
+.main-box{
+  background: rgb(241, 241, 241);
+  height: 100%;
+  font-size: 0.8em;
+
+}
+.main-box span{
+  background: #C8D7E3;
+  width: 100%;
+  display: inline-block;
+  padding: 6px 10px;
+}
+.main-box a{
+  color: #000000;
+  font-size: 1em;
+}

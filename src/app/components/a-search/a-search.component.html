@@ -1,0 +1,33 @@
+<div class="box-main">
+  <div class="box-main-title"><b>Búsqueda de Entidades</b></div>
+  <div class="box-main-opt">
+    <div class="box-main-opt-input">
+      <span>Codigo</span>
+      <input
+        type="radio"
+        name=""
+        title="Buscar"
+        placeholder="Ingrese su búsqueda aquí"
+        [(ngModel)]="opcionSeleccionada" value="input"
+      />
+    </div>
+    <div class="box-main-opt-input">
+      <span>Descripcion</span>
+      <input
+        type="radio"
+        name=""
+        [(ngModel)]="opcionSeleccionada" value="select"
+        title="Buscar"
+        placeholder="Ingrese su búsqueda aquí"
+      />
+    </div>
+  </div>
+  <div class="box-main-rpt">
+    <input *ngIf="opcionSeleccionada === 'input'"  type="text"  title="codgp">
+    <select *ngIf="opcionSeleccionada === 'select'" title="ntidades" name="" id="">
+      <option *ngFor="let option of options" [value]="option.id">{{ option.nombre }}</option>
+
+    </select>
+    <button *ngIf="opcionSeleccionada === 'select' || opcionSeleccionada === 'input' " >Buscar</button>
+  </div>
+</div>
