@@ -1,34 +1,38 @@
 <div class="box-main">
-  <div class="box-main-title"><span><b>Titlle</b></span></div>
+  <div class="box-main-title"><span><b>Titlle ({{entidades.length}})</b></span></div>
   <div class="box-main-list-btn">
-    <button>one</button>
-    <button>two</button>
-    <button>three</button>
-    <button>Four</button>
+    <button>Nuevo</button>
+    <button>Modificar</button>
+    <button>Eliminar</button>
+    <button>Habilitar</button>
+    <button>Deshabilitar</button>
+    <button>Llaves</button>
   </div>
   <div class="box-main-list-btn-low">
     <button>check</button>
     <button>cheew</button>
   </div>
   <div class="box-main-description">
-    <span>text </span>
-    paginacion
+    <span>{{entidades.length}} registros encontrados. [Inicio/Ant] 1, 2, 3, 4, 5 [Sgte/Fin] </span>
   </div>
   <div class="box-main-table">
-    <table>
-      <thead>
+    <table class="main-table">
+      <thead    class="main-table-head">
         <tr>
-          <th></th> <!-- Columna para el checkbox -->
-          <th>Nombre</th> <!-- Columna para el nombre -->
-          <th>Descripción</th> <!-- Columna para la descripción -->
+          <th>Sel.</th> <!-- Columna para el checkbox -->
+          <th *ngFor="let columna of columnas">{{ columna }}</th>
         </tr>
       </thead>
-      <tbody>
-        <tr >
+      <tbody class="main-table-body">
+        <tr *ngFor="let entidad of entidades">
           <td><input  title="e" type="checkbox"></td> <!-- Checkbox -->
-          <td>rwer</td> <!-- Nombre -->
-          <td>fsadf</td> <!-- Descripción -->
+          <td >{{ entidad.id }}</td>
+          <td >{{ entidad.nombre }}</td>
+          <td >{{ entidad.type }}</td>
+
         </tr>
+
+
       </tbody>
     </table>
 

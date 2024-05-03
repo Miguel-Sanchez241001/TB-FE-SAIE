@@ -19,3 +19,32 @@ button{
 .box-main-list-btn{
   padding: 4px 8px;
 }
+.box-main-table{
+  width: 100%;
+  color: black;
+}
+.main-table{
+  width: 100%;
+  border: 1px solid black;
+}
+.main-table-head{
+  border: 1px solid black;
+}
+.main-table-body{
+  border: 1px solid black;
+  background: white;
+}
+th{
+  border: 1px solid black;
+  text-align: center;
+  font-size: small;
+  font-weight: 400;
+}
+td{
+  border-right: 1px solid black;
+  padding: 0px 10px;
+}
+th:first-child {
+padding: 0px 10px;
+width: 2%;
+}
