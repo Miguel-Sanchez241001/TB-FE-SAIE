@@ -1,5 +1,5 @@
 <div class="box-main">
-  <div class="box-main-title"><span><b>Titlle ({{entidades.length}})</b></span></div>
+  <div class="box-main-title"><span><b>Titlle ({{datos.length}})</b></span></div>
   <div class="box-main-list-btn">
     <button>Nuevo</button>
     <button>Modificar</button>
@@ -13,7 +13,7 @@
     <button>cheew</button>
   </div>
   <div class="box-main-description">
-    <span>{{entidades.length}} registros encontrados. [Inicio/Ant] 1, 2, 3, 4, 5 [Sgte/Fin] </span>
+    <span>{{datos.length}} registros encontrados. [Inicio/Ant] 1, 2, 3, 4, 5 [Sgte/Fin] </span>
   </div>
   <div class="box-main-table">
     <table class="main-table">
@@ -24,12 +24,9 @@
         </tr>
       </thead>
       <tbody class="main-table-body">
-        <tr *ngFor="let entidad of entidades">
+        <tr *ngFor="let entidad of datos">
           <td><input  title="e" type="checkbox"></td> <!-- Checkbox -->
-          <td >{{ entidad.id }}</td>
-          <td >{{ entidad.nombre }}</td>
-          <td >{{ entidad.type }}</td>
-
+          <td *ngFor="let columna of columnas">{{ entidad[columna] }}</td>
         </tr>
 
 

@@ -12,6 +12,8 @@ export  interface EntidadModel {
   nombre: string;
   type: string;
   interfaces: InterfazModel[];
+  [key: string]: any; // Índice de tipo string para propiedades adicionales
+
 }
 
 export  interface ResponseModel {
@@ -24,7 +26,8 @@ export class EntidadModelImpl implements EntidadModel {
   id?: number;
   nombre: string;
   type: string;
-  interfaces: any[]; // Definir interfaces según corresponda
+  interfaces: InterfazModel[]; // Definir interfaces según corresponda
+  [key: string]: any; // Índice de tipo string para propiedades adicionales
 
   constructor(nombre: string, type: string) {
     this.nombre = nombre;

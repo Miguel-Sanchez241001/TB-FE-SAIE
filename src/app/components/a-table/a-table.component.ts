@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { EntidadModel, EntidadModelImpl, InterfazModel } from '../../models/model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {  HttpClientModule } from '@angular/common/http';
 import { ApiService } from '../../services/api.service';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-a-table',
@@ -14,35 +15,30 @@ import { ApiService } from '../../services/api.service';
 
 })
 export class ATableComponent implements OnInit {
-  @Input() datos: (EntidadModel | InterfazModel)[] = [];
-  columnas: string[] = [];
-  entidades:EntidadModel[] = [];
+  @Input() datos: (EntidadModelImpl )[] = [];
+  @Input() columnas: string[] = [];
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  totalItems: number = 100; // Número total de elementos
+  itemsPerPage: number = 10; // Número de elementos por página
+  data: any[] = []; // Datos que se mostrarán en la página actual
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
 
-    this.apiService.getOptions().subscribe(
-      (entidades: EntidadModelImpl[]) => {
-        console.log({entidades});
-       entidades.map((entidad)=>  {
-           this.entidades.push(entidad);
-           this.columnas = Object.keys(entidad);
-          });
-          const indice = this.columnas.indexOf('interfaces');
-          if (indice !== -1) {
-            this.columnas.splice(indice, 1);
-          }
-          console.log(this.columnas);
-      },
-      error => {
-        console.error('Error al obtener las entidades:', error);
-      }
-    );
   }
 
+  getDataForPage(event: PageEvent) {
+    const startIndex = event.pageIndex * event.pageSize;
+    const endIndex = startIndex + event.pageSize;
+    // Lógica para obtener los datos de la página actual, por ejemplo, con un servicio
+    // this.data = this.dataSource.slice(startIndex, endIndex);
+  }
 
-
+// Determina si los datos son de tipo EntidadModel
+get esEntidad(): boolean {
+  return this.datos.length > 0 && this.datos[0] instanceof EntidadModelImpl;
+}
 
 
 

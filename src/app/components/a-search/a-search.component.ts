@@ -12,8 +12,7 @@ import { ResponseModel,EntidadModelImpl } from '../../models/model';
   imports:[FormsModule,CommonModule,HttpClientModule ]
 })
 export class ASearchComponent implements OnInit {
- // options!: ResponseModel ;
- options: { id?: number, nombre: string }[] = [];
+  options: { id?: number, nombre: string }[] = [];
 
  opcionSeleccionada: string = ''; // Valor por defecto
 
