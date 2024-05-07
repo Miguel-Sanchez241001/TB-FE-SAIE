@@ -16,6 +16,8 @@
     <span>{{datos.length}} registros encontrados. [Inicio/Ant] 1, 2, 3, 4, 5 [Sgte/Fin] </span>
   </div>
   <div class="box-main-table">
+    <mat-paginator [length]="totalItems" [pageSize]="itemsPerPage" (page)="getDataForPage($event)">
+    </mat-paginator>
     <table class="main-table">
       <thead    class="main-table-head">
         <tr>
@@ -24,7 +26,7 @@
         </tr>
       </thead>
       <tbody class="main-table-body">
-        <tr *ngFor="let entidad of datos">
+        <tr *ngFor="let entidad of data">
           <td><input  title="e" type="checkbox"></td> <!-- Checkbox -->
           <td *ngFor="let columna of columnas">{{ entidad[columna] }}</td>
         </tr>

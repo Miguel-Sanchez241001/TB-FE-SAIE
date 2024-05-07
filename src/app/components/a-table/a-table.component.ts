@@ -11,16 +11,16 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
   templateUrl: './a-table.component.html',
   styleUrl: './a-table.component.css',
   standalone:true,
-  imports:[FormsModule,CommonModule,HttpClientModule ]
+  imports:[MatPaginator,FormsModule,CommonModule,HttpClientModule ]
 
 })
 export class ATableComponent implements OnInit {
   @Input() datos: (EntidadModelImpl )[] = [];
   @Input() columnas: string[] = [];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  totalItems: number = 100; // Número total de elementos
-  itemsPerPage: number = 10; // Número de elementos por página
-  data: any[] = []; // Datos que se mostrarán en la página actual
+  totalItems: number = this.datos.length; // Número total de elementos
+  itemsPerPage: number = 2; // Número de elementos por página
+  data: EntidadModelImpl[] = []; // Datos que se mostrarán en la página actual
 
   constructor(private apiService: ApiService) {}
 
@@ -32,7 +32,7 @@ export class ATableComponent implements OnInit {
     const startIndex = event.pageIndex * event.pageSize;
     const endIndex = startIndex + event.pageSize;
     // Lógica para obtener los datos de la página actual, por ejemplo, con un servicio
-    // this.data = this.dataSource.slice(startIndex, endIndex);
+     this.data = this.datos.slice(startIndex, endIndex);
   }
 
 // Determina si los datos son de tipo EntidadModel
