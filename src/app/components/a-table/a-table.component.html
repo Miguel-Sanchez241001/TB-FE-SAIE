@@ -26,7 +26,7 @@
         </tr>
       </thead>
       <tbody class="main-table-body">
-        <tr *ngFor="let entidad of data">
+        <tr *ngFor="let entidad of datos">
           <td><input  title="e" type="checkbox"></td> <!-- Checkbox -->
           <td *ngFor="let columna of columnas">{{ entidad[columna] }}</td>
         </tr>

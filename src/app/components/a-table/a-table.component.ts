@@ -4,14 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {  HttpClientModule } from '@angular/common/http';
 import { ApiService } from '../../services/api.service';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-a-table',
   templateUrl: './a-table.component.html',
   styleUrl: './a-table.component.css',
   standalone:true,
-  imports:[MatPaginator,FormsModule,CommonModule,HttpClientModule ]
+  imports:[
+    FormsModule,
+    CommonModule,
+    HttpClientModule,
+    MatPaginatorModule ]
 
 })
 export class ATableComponent implements OnInit {
