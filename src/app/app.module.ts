@@ -7,6 +7,7 @@ import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
+import {ViewsModule} from "./views/views.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     MatPaginatorModule,
     NgxPaginationModule,
-
+    ViewsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
