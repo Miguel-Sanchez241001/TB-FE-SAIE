@@ -18,7 +18,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ComponentsModule,
     HttpClientModule,
     MatPaginatorModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
